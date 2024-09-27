@@ -1,0 +1,220 @@
+{
+  "id": "products",
+  "label": "Products",
+  "format": "page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": ""
+        }
+      },
+      "date": {
+        "type": "Date",
+        "fieldset": "Date Added"
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Product Title",
+          "placeholder": "Select your title"
+        }
+      },
+      "categories": {
+        "type": "Group",
+        "fieldset": "Categories",
+        "config": {
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "select": "document",
+                "customtypes": ["category", "marketing_category_page"],
+                "label": "Link",
+                "placeholder": "Link to a category"
+              }
+            }
+          }
+        }
+      },
+      "body": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    },
+    "Product Info": {
+      "product_carousel": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "constraint": {},
+                "thumbnails": [
+                  {
+                    "name": "Mobile",
+                    "width": 150,
+                    "height": 150
+                  },
+                  {
+                    "name": "Tablet",
+                    "width": 400,
+                    "height": 400
+                  }
+                ],
+                "label": "Image"
+              }
+            }
+          },
+          "label": "Product image carousel"
+        }
+      },
+      "price": {
+        "type": "Number",
+        "fieldset": "Price",
+        "config": {
+          "label": "IDR",
+          "min": 1,
+          "placeholder": "Insert Price..."
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "fieldset": "Product Description",
+        "config": {
+          "multi": "paragraph,em,strong,hyperlink",
+          "placeholder": "Description..."
+        }
+      },
+      "tokopedia": {
+        "type": "Link",
+        "config": {
+          "label": "tokopedia",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "shopee": {
+        "type": "Link",
+        "config": {
+          "label": "shopee",
+          "placeholder": "",
+          "select": null
+        }
+      }
+    },
+    "SEO": {
+      "meta_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta title",
+          "placeholder": "Select meta title"
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta description",
+          "placeholder": "Select your meta description"
+        }
+      },
+      "display_name": {
+        "type": "Text",
+        "config": {
+          "label": "Display name",
+          "placeholder": "Select display name"
+        }
+      },
+      "body1": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "twitter_card": {
+              "type": "Slice",
+              "fieldset": "Twitter Card",
+              "description": "Fields to customize Twitter Card (Summary Card with Large Image)",
+              "icon": "credit_card",
+              "display": "list",
+              "non-repeat": {
+                "twitter_title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Title",
+                    "placeholder": "Title for Twitter Card"
+                  }
+                },
+                "twitter_description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "Description for Twitter Card"
+                  }
+                },
+                "twitter_image": {
+                  "type": "Image",
+                  "config": {
+                    "constraint": {
+                      "width": 1024,
+                      "height": 512
+                    },
+                    "thumbnails": [],
+                    "label": "Image"
+                  }
+                }
+              },
+              "repeat": {}
+            },
+            "open_graph": {
+              "type": "Slice",
+              "fieldset": "Open Graph",
+              "description": "Fields to customize Open Graph",
+              "icon": "thumb_up",
+              "display": "list",
+              "non-repeat": {
+                "og_title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Title",
+                    "placeholder": "Title for Open Graph"
+                  }
+                },
+                "og_description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "Description for Open Graph"
+                  }
+                },
+                "og_image": {
+                  "type": "Image",
+                  "config": {
+                    "constraint": {
+                      "width": 1200,
+                      "height": 628
+                    },
+                    "thumbnails": [],
+                    "label": "Image"
+                  }
+                }
+              },
+              "repeat": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}
