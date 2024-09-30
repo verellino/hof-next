@@ -35,7 +35,7 @@ const HofclubHero = () => {
         </h3>
         <div className="not-prose mt-6 flex gap-2 md:mt-12">
           <Button variant={"destructive"} size={"lg"} asChild>
-            <Link href="/">
+            <Link href="https://www.tokopedia.com/hofclub">
               <ShoppingBag className="mr-2" />
               Shop at Tokopedia
             </Link>

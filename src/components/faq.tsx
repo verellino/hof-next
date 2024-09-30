@@ -52,7 +52,7 @@ const content: FAQItem[] = [
 const FAQ = () => {
   return (
     <Section>
-      <div className="w-2/3">
+      <div className="w-full md:w-2/3">
         <h2 className="!mt-0 text-4xl">Our Services</h2>
         <h4 className="mt-2 text-muted-foreground">
           Can&apos;t find the answer you&apos;re looking for? Reach out to our

@@ -13,9 +13,9 @@ import { ArrowUpRight } from "lucide-react";
 
 const CTA = () => {
   return (
-    <Section className="grid grid-cols-6 px-10 bg-[#e0e0e0]">
-      <div className="col-start-2 col-span-4 pt-40 pb-32">
-        <h2 className="!my-0 text-5xl max-2xl text-black">
+    <Section className="grid grid-cols-6 px-4 md:px-10 bg-[#e0e0e0]">
+      <div className="col-start-2 col-span-5 md:col-span-4 pt-40 pb-32">
+        <h2 className="!my-0 text-xl md:text-5xl max-2xl text-black">
           <Balancer>
             Stay ahead from engine problems, don’t hesitate to contact us for
             consultation or schedule an appointment with us

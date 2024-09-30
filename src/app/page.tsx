@@ -15,6 +15,8 @@ import HC1 from "@/assets/images/HC_001.webp";
 import FAQ from "@/components/faq";
 import { ArrowUpRight } from "lucide-react";
 import CTA from "@/components/cta";
+import { Suspense } from "react";
+import Link from "next/link";
 
 export default async function Home() {
   return (
@@ -70,25 +72,27 @@ export default async function Home() {
               ipsum distinctio modi totam saepe voluptates odit minus quidem
               ullam minima natus.
             </p>
-            <a
-              href={"/"}
+            <Link
+              href={"/hofclub"}
               className="mt-8 flex items-center w-[fit-content] text-red-700 transition-all duration-300 border-spacing-2 border-red-700 hover:border-b"
             >
-              Learn more <ArrowUpRight className="ml-1" size="16" />
-            </a>
+              See The Collection <ArrowUpRight className="ml-1" size="16" />
+            </Link>
           </div>
-          <div className="col-span-2">
-            <Video />
+          <div className="col-span-2 mt-8 md:mt-0">
+            <Suspense fallback={<p>Loading video..</p>}>
+              <Video />
+            </Suspense>
           </div>
           <Image
             src={HCSGR}
             alt="HofClub 1"
-            className="absolute -rotate-[24deg] left-2 top-4 w-40"
+            className="absolute -rotate-[24deg] w-20 left-2 md:top-4 md:w-40"
           ></Image>
           <Image
             src={HCSGB}
             alt="HofClub 2"
-            className="absolute rotate-[12deg] right-[31%] top-[60%] w-60"
+            className="absolute rotate-[12deg] w-20 top-[42%] right-2 md:right-[31%] md:top-[60%] md:w-60"
           ></Image>
         </section>
         <CTA />

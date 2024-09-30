@@ -8,8 +8,8 @@ import { PrismicNextLink, PrismicPreview } from "@prismicio/next";
 import { createClient, repositoryName } from "@/prismicio";
 import Image from "next/image";
 
-import HofLogo from "@/assets/images/HOF-logogram.svg";
 import HofLogotype from "@/assets/images/logotype-hof.svg";
+import Header from "@/components/layout/header";
 
 export async function generateMetadata() {
   const client = createClient();
@@ -34,32 +34,6 @@ export default async function RootLayout({
         <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>
-  );
-}
-
-async function Header() {
-  const client = createClient();
-  const settings = await client.getSingle("settings");
-
-  return (
-    <header className="p-6 text-white md:px-10">
-      <div className="mx-auto flex w-full flex-col items-center gap-4 md:flex-row">
-        <Link href="/" className="shrink-0 text-2xl font-medium">
-          <Image src={HofLogo} alt="Hofmeister" className="w-16" />
-        </Link>
-        <nav className="grow">
-          <ul className="flex flex-wrap gap-x-6 gap-y-4 md:justify-end md:gap-x-12">
-            {settings.data.navigation.map((item) => (
-              <li key={item.label}>
-                <PrismicNextLink field={item.link}>
-                  {item.label}
-                </PrismicNextLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </header>
   );
 }
 
